@@ -2,19 +2,19 @@ import argparse as ap
 from pathlib import Path
 
 
-def split_to_list(line):
+def split_to_list(line: str) -> list:
     return list(filter(None, line.split(' ')))
 
 
-def add_tens(list_):
+def add_tens(list_: list) -> list:
     return ['-1' + s[1:] if s[0] == '-' else '1' + s for s in list_]
 
 
-def cif_order_to_res_order(list_):
+def cif_order_to_res_order(list_: list) -> list:
     return [list_[0], list_[1], list_[2], list_[5], list_[4], list_[3]]
 
 
-def get_adp_dictionary_from_constrains(con_path):
+def get_adp_dictionary_from_constrains(con_path: str) -> dict:
     adp_dict = {}
     with open(str(Path(con_path)), 'r') as con:
         for line in con.readlines():
@@ -24,7 +24,7 @@ def get_adp_dictionary_from_constrains(con_path):
     return adp_dict
 
 
-def incorporate_constrains_into_line(line, adp_dict):
+def incorporate_constrains_into_line(line: str, adp_dict: dict) -> str:
     line_elements = split_to_list(line)
     if len(line_elements) >= 7:
         k = line_elements[0].upper()
@@ -38,7 +38,7 @@ def incorporate_constrains_into_line(line, adp_dict):
     return line
 
 
-def incorporate_constrains_into_res(res_path, adp_dict):
+def incorporate_constrains_into_res(res_path: str, adp_dict: dict) -> None:
     with open(str(Path(res_path)), 'r') as res:
         res_data = res.read().replace('=\n', '')
     res_lines = res_data.split('\n')

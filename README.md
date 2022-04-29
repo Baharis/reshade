@@ -30,4 +30,4 @@ or adding its directory to the $PATH variable
 ## Author
 
 This script has been created by Daniel Tchoń and published under MIT license.
-If you have any questions, feel free to contact me here or via e-mail. 
+If you have any questions, feel free to contact me via e-mail or on ResearchGate. 

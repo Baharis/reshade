@@ -1,0 +1,5 @@
+Example data "PA" from:
+Daniel Tchoń and Anna Makal
+Structure and piezochromism of pyrene-1-carbaldehyde at high pressure
+Acta Cryst B 75, 343-353 (2019).
+https://doi.org/10.1107/S2052520619003354
